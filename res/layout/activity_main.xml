@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/colorPrimaryDark"
+    >
+
+<!--RYSUJ-->
+    <!--<Button-->
+        <!--android:id="@+id/buttonRysuj"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:background="@color/colorAccent"-->
+        <!--android:onClick="onClickSwitchViewRysuj"-->
+        <!--android:text="@string/button_draw"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent" />-->
+
+
+    <!--ZAPISANE-->
+    <!--<Button-->
+        <!--android:id="@+id/buttonSaved"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:background="@color/colorAccent"-->
+        <!--android:onClick="onClickSwitchViewZapisane"-->
+        <!--android:text="@string/button_saved"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent" />-->
+
+
+
+<!--SEKCJA A-->
+
+    <EditText
+        android:id="@+id/editTextA"
+        android:layout_width="100dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="2"
+        android:gravity="center"
+        android:inputType="number"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewA" />
+
+    <TextView
+        android:id="@+id/textViewA"
+        android:layout_width="115dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="RADIUS A"
+        android:textColor="@color/colorAccent"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonA1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
+        android:text="+"
+        android:onClick="onClickPlusCRadiusA"
+        android:textSize="32dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonA2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
+        android:text="-"
+        android:onClick="onClickMinusCRadiusA"
+        android:textSize="32dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonA1" />
+
+    <Button
+        android:id="@+id/buttonA3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
+        android:text="+"
+        android:textSize="32dp"
+        android:gravity="center"
+        android:onClick="onClickPlusDRadiusA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonA4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
+        android:text="-"
+        android:textSize="32dp"
+        android:gravity="center"
+        android:onClick="onClickMinusDRadiusA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonA3" />
+
+<!---->
+    <!--SEEKBAR B-->
+
+    <EditText
+        android:id="@+id/editTextB"
+        android:layout_width="100dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="2"
+        android:gravity="center"
+        android:inputType="number"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewB" />
+
+    <TextView
+        android:id="@+id/textViewB"
+        android:layout_width="115dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="RADIUS B"
+        android:textColor="@color/colorAccent"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextA" />
+
+    <Button
+        android:id="@+id/buttonB1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/colorAccent"
+        android:text="+"
+        android:textSize="32dp"
+        android:gravity="center"
+        android:onClick="onClickPlusCRadiusB"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextA" />
+
+    <Button
+        android:id="@+id/buttonB2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
+        android:text="-"
+        android:textSize="32dp"
+        android:gravity="center"
+        android:onClick="onClickMinusCRadiusB"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonB1" />
+
+    <Button
+        android:id="@+id/buttonB3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/colorAccent"
+        android:text="+"
+        android:textSize="32dp"
+        android:gravity="center"
+        android:onClick="onClickPlusDRadiusB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextA" />
+
+    <Button
+        android:id="@+id/buttonB4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
+        android:text="-"
+        android:textSize="32dp"
+        android:gravity="center"
+        android:onClick="onClickMinusDRadiusB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonB3" />
+
+<!---->
+    <!--SEEKBAR C-->
+
+    <EditText
+        android:id="@+id/editTextC"
+        android:layout_width="100dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="2"
+        android:inputType="number"
+        android:text=""
+        android:gravity="center"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewC" />
+
+    <TextView
+        android:id="@+id/textViewC"
+        android:layout_width="115dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="RADIUS C"
+        android:textColor="@color/colorAccent"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="@android:integer/config_mediumAnimTime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextB" />
+
+    <Button
+        android:id="@+id/buttonC1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/colorAccent"
+        android:text="+"
+        android:textSize="32dp"
+        android:gravity="center"
+        android:onClick="onClickPlusCRadiusC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextB" />
+
+    <Button
+        android:id="@+id/buttonC2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
+        android:text="-"
+        android:textSize="32dp"
+        android:gravity="center"
+        android:onClick="onClickMinusCRadiusC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonC1" />
+
+    <Button
+        android:id="@+id/buttonC3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/colorAccent"
+        android:text="+"
+        android:textSize="32dp"
+        android:gravity="center"
+        android:onClick="onClickPlusDRadiusC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextB" />
+
+    <Button
+        android:id="@+id/buttonC4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
+        android:text="-"
+        android:textSize="32dp"
+        android:gravity="center"
+        android:onClick="onClickMinusDRadiusC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonC3" />
+
+    <!---->
+
+    <!--SEEKBAR D-->
+
+    <EditText
+        android:id="@+id/editTextD"
+        android:layout_width="100dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:ems="2"
+        android:gravity="center"
+        android:inputType="number"
+        android:text=""
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextC" />
+
+    <TextView
+        android:id="@+id/textViewD"
+        android:layout_width="wrap_content"
+        android:layout_height="39dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="32dp"
+        android:text=" PEN "
+        android:textColor="@color/colorAccent"
+        android:textSize="24dp"
+        app:layout_constraintHorizontal_weight="@android:integer/config_mediumAnimTime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextC" />
+
+    <Button
+        android:id="@+id/buttonD1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="onClickPlusPen"
+        android:text="+"
+        android:textSize="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextC" />
+
+    <Button
+        android:id="@+id/buttonD2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="onClickMinusPen"
+        android:text="-"
+        android:textSize="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextC" />
+
+
+
+    <!--SEEKBAR E-->
+
+    <EditText
+        android:id="@+id/editTextE"
+        android:layout_width="100dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:ems="2"
+        android:gravity="center"
+        android:inputType="number"
+        android:text=""
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextD" />
+
+    <TextView
+        android:id="@+id/textViewE"
+        android:layout_width="wrap_content"
+        android:layout_height="39dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="24dp"
+        android:text=" STEPS "
+        android:textColor="@color/colorAccent"
+        android:textSize="24dp"
+        app:layout_constraintHorizontal_weight="@android:integer/config_mediumAnimTime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextD" />
+
+    <Button
+        android:id="@+id/buttonE1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="onClickPlusStep"
+        android:text="+"
+        android:textSize="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextD" />
+
+    <Button
+        android:id="@+id/buttonE2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="onClickMinusStep"
+        android:text="-"
+        android:textSize="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextD" />
+
+
+
+    <!--KOLORY-->
+    <Button
+        android:id="@+id/buttonKolory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/colorAccent"
+        android:onClick="onClickSwitchViewKolory"
+        android:text="@string/button_kolory"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <!--RESET-->
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorAccent"
+        android:onClick="onClickReset"
+        android:text="@string/button_reset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+
+    <!---->
+
+
+</android.support.constraint.ConstraintLayout>
