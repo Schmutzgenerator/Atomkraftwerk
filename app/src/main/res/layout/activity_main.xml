@@ -43,8 +43,8 @@
 
 <!--SEKCJA A-->
 
-    <EditText
-        android:id="@+id/editTextA"
+    <TextView
+        android:id="@+id/eTextA"
         android:layout_width="100dp"
         android:layout_height="46dp"
         android:layout_marginEnd="8dp"
@@ -53,8 +53,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="2"
+        android:text="53.0"
         android:gravity="center"
-        android:inputType="number"
+        android:textSize="24dp"
         android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -139,8 +140,8 @@
 <!---->
     <!--SEEKBAR B-->
 
-    <EditText
-        android:id="@+id/editTextB"
+    <TextView
+        android:id="@+id/eTextB"
         android:layout_width="100dp"
         android:layout_height="46dp"
         android:layout_marginEnd="8dp"
@@ -148,9 +149,9 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:ems="2"
+        android:text="32.0"
         android:gravity="center"
-        android:inputType="number"
+        android:textSize="24dp"
         android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -170,7 +171,7 @@
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextA" />
+        app:layout_constraintTop_toBottomOf="@+id/eTextA" />
 
     <Button
         android:id="@+id/buttonB1"
@@ -185,7 +186,7 @@
         android:gravity="center"
         android:onClick="onClickPlusCRadiusB"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextA" />
+        app:layout_constraintTop_toBottomOf="@+id/eTextA" />
 
     <Button
         android:id="@+id/buttonB2"
@@ -215,7 +216,7 @@
         android:gravity="center"
         android:onClick="onClickPlusDRadiusB"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextA" />
+        app:layout_constraintTop_toBottomOf="@+id/eTextA" />
 
     <Button
         android:id="@+id/buttonB4"
@@ -235,8 +236,8 @@
 <!---->
     <!--SEEKBAR C-->
 
-    <EditText
-        android:id="@+id/editTextC"
+    <TextView
+        android:id="@+id/eTextC"
         android:layout_width="100dp"
         android:layout_height="46dp"
         android:layout_marginEnd="8dp"
@@ -244,9 +245,8 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:ems="2"
-        android:inputType="number"
-        android:text=""
+        android:text="20.0"
+        android:textSize="24dp"
         android:gravity="center"
         android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -268,7 +268,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="@android:integer/config_mediumAnimTime"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextB" />
+        app:layout_constraintTop_toBottomOf="@+id/eTextB" />
 
     <Button
         android:id="@+id/buttonC1"
@@ -283,7 +283,7 @@
         android:gravity="center"
         android:onClick="onClickPlusCRadiusC"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextB" />
+        app:layout_constraintTop_toBottomOf="@+id/eTextB" />
 
     <Button
         android:id="@+id/buttonC2"
@@ -313,7 +313,7 @@
         android:gravity="center"
         android:onClick="onClickPlusDRadiusC"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextB" />
+        app:layout_constraintTop_toBottomOf="@+id/eTextB" />
 
     <Button
         android:id="@+id/buttonC4"
@@ -334,10 +334,10 @@
 
     <!--SEEKBAR D-->
 
-    <EditText
-        android:id="@+id/editTextD"
+    <TextView
+        android:id="@+id/eTextD"
         android:layout_width="100dp"
-        android:layout_height="46dp"
+        android:layout_height="39dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -345,12 +345,12 @@
         android:layout_marginTop="32dp"
         android:ems="2"
         android:gravity="center"
-        android:inputType="number"
-        android:text=""
+        android:text="5"
         android:textColor="@color/colorAccent"
+        android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextC" />
+        app:layout_constraintTop_toBottomOf="@+id/eTextC" />
 
     <TextView
         android:id="@+id/textViewD"
@@ -362,9 +362,10 @@
         android:text=" PEN "
         android:textColor="@color/colorAccent"
         android:textSize="24dp"
+        android:gravity="center"
         app:layout_constraintHorizontal_weight="@android:integer/config_mediumAnimTime"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextC" />
+        app:layout_constraintTop_toBottomOf="@+id/eTextC" />
 
     <Button
         android:id="@+id/buttonD1"
@@ -379,7 +380,7 @@
         android:text="+"
         android:textSize="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextC" />
+        app:layout_constraintTop_toBottomOf="@+id/eTextC" />
 
     <Button
         android:id="@+id/buttonD2"
@@ -394,29 +395,29 @@
         android:text="-"
         android:textSize="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextC" />
+        app:layout_constraintTop_toBottomOf="@+id/eTextC" />
 
 
 
     <!--SEEKBAR E-->
 
-    <EditText
-        android:id="@+id/editTextE"
+    <TextView
+        android:id="@+id/eTextE"
         android:layout_width="100dp"
-        android:layout_height="46dp"
+        android:layout_height="39dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:ems="2"
         android:gravity="center"
-        android:inputType="number"
-        android:text=""
+        android:text="7.0"
         android:textColor="@color/colorAccent"
+        android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextD" />
+        app:layout_constraintTop_toBottomOf="@+id/eTextD" />
 
     <TextView
         android:id="@+id/textViewE"
@@ -428,9 +429,10 @@
         android:text=" STEPS "
         android:textColor="@color/colorAccent"
         android:textSize="24dp"
+        android:gravity="center"
         app:layout_constraintHorizontal_weight="@android:integer/config_mediumAnimTime"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextD" />
+        app:layout_constraintTop_toBottomOf="@+id/eTextD" />
 
     <Button
         android:id="@+id/buttonE1"
@@ -445,7 +447,7 @@
         android:text="+"
         android:textSize="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextD" />
+        app:layout_constraintTop_toBottomOf="@+id/eTextD" />
 
     <Button
         android:id="@+id/buttonE2"
@@ -460,7 +462,7 @@
         android:text="-"
         android:textSize="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextD" />
+        app:layout_constraintTop_toBottomOf="@+id/eTextD" />
 
 
 
