@@ -25,11 +25,11 @@ public class MainActivity extends AppCompatActivity {
     public double steps=7;
 
     private void printValues(View view){
-        ((TextView)findViewById(R.id.editTextA)).setText(Double.toString(radiusA/10));
-        ((TextView)findViewById(R.id.editTextB)).setText(Double.toString(radiusB/10));
-        ((TextView)findViewById(R.id.editTextC)).setText(Double.toString(radiusC/10));
-        ((TextView)findViewById(R.id.editTextD)).setText(Integer.toString(thicknss));
-        ((TextView)findViewById(R.id.editTextE)).setText(Double.toString(steps));
+        ((TextView)findViewById(R.id.eTextA)).setText(Double.toString(radiusA/10));
+        ((TextView)findViewById(R.id.eTextB)).setText(Double.toString(radiusB/10));
+        ((TextView)findViewById(R.id.eTextC)).setText(Double.toString(radiusC/10));
+        ((TextView)findViewById(R.id.eTextD)).setText(Integer.toString(thicknss));
+        ((TextView)findViewById(R.id.eTextE)).setText(Double.toString(steps));
     }
 
 
@@ -133,14 +133,14 @@ public class MainActivity extends AppCompatActivity {
     public void onClickPlusPen(View view){
         thicknss++;
 
-        ((TextView)findViewById(R.id.editTextD)).setText(Integer.toString(thicknss));
+        ((TextView)findViewById(R.id.eTextD)).setText(Integer.toString(thicknss));
 
     }
 
     public void onClickMinusPen(View view){
         if(thicknss>1) thicknss--;
 
-        ((TextView)findViewById(R.id.editTextD)).setText(Integer.toString(thicknss));
+        ((TextView)findViewById(R.id.eTextD)).setText(Integer.toString(thicknss));
 
     }
 //
@@ -165,12 +165,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickPlusStep(View view){
         steps+=0.5;
-        ((TextView)findViewById(R.id.editTextE)).setText(Double.toString(steps));
+        ((TextView)findViewById(R.id.eTextE)).setText(Double.toString(steps));
     }
 
     public void onClickMinusStep(View view){
         if(steps>0.5) steps-=0.5;
-        ((TextView)findViewById(R.id.editTextE)).setText(Double.toString(steps));
+        ((TextView)findViewById(R.id.eTextE)).setText(Double.toString(steps));
     }
 
 
@@ -189,7 +189,6 @@ public class MainActivity extends AppCompatActivity {
             super.onDraw(canvas);
             int x = getWidth();
             int y = getHeight();
-
             int color1 = color;
             double y1=getHeight();
             double x1=getWidth();
@@ -205,8 +204,6 @@ public class MainActivity extends AppCompatActivity {
             if (color1 == 1) paint.setColor(Color.parseColor("#0000ff"));
             if (color1 == 2) paint.setColor(Color.parseColor("#ff0000"));
 
-
-
         x1/=2;
         y1/=2;
         radiusX=radiusA-radiusB;
@@ -219,12 +216,9 @@ public class MainActivity extends AppCompatActivity {
                         ((int)(y1+radiusX*Math.sin(i*0.0002*2*Math.PI)+radiusY*Math.sin(-i*0.0002*radiusA/radiusB*2*Math.PI-(0.0002*i*radiusA/radiusB)))),
                         thicknss, paint);
 
-
             }
-
             paint.setTextSize(40);
         canvas.drawText(radiusA+"//"+radiusB+"//"+radiusC+"//"+steps, 25, 40, paint);
-
 
         }
 
@@ -251,11 +245,6 @@ public class MainActivity extends AppCompatActivity {
                 new ViewGroup.LayoutParams(
                         ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.WRAP_CONTENT));
-        ((TextView)findViewById(R.id.editTextA)).setText(Double.toString(radiusA/10));
-        ((TextView)findViewById(R.id.editTextB)).setText(Double.toString(radiusB/10));
-        ((TextView)findViewById(R.id.editTextC)).setText(Double.toString(radiusC/10));
-        ((TextView)findViewById(R.id.editTextD)).setText(Integer.toString(thicknss));
-        ((TextView)findViewById(R.id.editTextE)).setText(Double.toString(steps));
 
     }
 
