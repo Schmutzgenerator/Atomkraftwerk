@@ -37,8 +37,9 @@ public class MainActivity extends AppCompatActivity {
 //    View Control Section
 
     public void onClickSwitchViewRysuj(View view) {
-        setContentView(new MyView(this));
-
+//        MyView mysz = new MyView(this, radiusA, radiusB, radiusC, thicknss, color, steps);
+        setContentView(new MyView(this, radiusA, radiusB, radiusC, thicknss, color, steps));
+//        mysz.zmienne();
     }
 
     public void onClickSwitchViewMain(View view) {
@@ -173,58 +174,61 @@ public class MainActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.eTextE)).setText(Double.toString(steps));
     }
 
+    //view-draw-etc
 
-    public class MyView extends View
-    {
-        Paint paint = null;
+//    public class MyView extends View
+//    {
+//        Paint paint = null;
+//
+//        public MyView(Context context)
+//        {
+//            super(context);
+//            paint = new Paint();
+//        }
+//
+//        @Override
+//        protected void onDraw(Canvas canvas) {
+//            super.onDraw(canvas);
+//            int x = getWidth();
+//            int y = getHeight();
+//            int color1 = color;
+//            double y1=getHeight();
+//            double x1=getWidth();
+//            double radiusX;
+//            double radiusY;
+//            paint.setStyle(Paint.Style.FILL);
+//            paint.setColor(Color.parseColor("#434343"));
+//            canvas.drawPaint(paint);
+//            paint.setColor(Color.parseColor("#ffff00"));
+//
+//            canvas.drawColor(Color.parseColor("#343434"));
+//            if (color1 == 0) paint.setColor(Color.parseColor("#ffff00"));
+//            if (color1 == 1) paint.setColor(Color.parseColor("#0000ff"));
+//            if (color1 == 2) paint.setColor(Color.parseColor("#ff0000"));
+//
+//        x1/=2;
+//        y1/=2;
+//        radiusX=radiusA-radiusB;
+//        radiusY=radiusC;
+//
+//            for(int i=0;i<5000*steps;i++){
+//
+//                canvas.drawCircle(
+//                        ((int)(x1+radiusX*Math.cos(i*0.0002*2*Math.PI)+radiusY*Math.cos(-i*0.0002*radiusA/radiusB*2*Math.PI-(0.0002*i*radiusA/radiusB)))),
+//                        ((int)(y1+radiusX*Math.sin(i*0.0002*2*Math.PI)+radiusY*Math.sin(-i*0.0002*radiusA/radiusB*2*Math.PI-(0.0002*i*radiusA/radiusB)))),
+//                        thicknss, paint);
+//
+//            }
+//            paint.setTextSize(40);
+//        canvas.drawText(radiusA+"//"+radiusB+"//"+radiusC+"//"+steps, 25, 40, paint);
+//
+//        }
+//
+//
+//
+//    }
 
-        public MyView(Context context)
-        {
-            super(context);
-            paint = new Paint();
-        }
-
-        @Override
-        protected void onDraw(Canvas canvas) {
-            super.onDraw(canvas);
-            int x = getWidth();
-            int y = getHeight();
-            int color1 = color;
-            double y1=getHeight();
-            double x1=getWidth();
-            double radiusX;
-            double radiusY;
-            paint.setStyle(Paint.Style.FILL);
-            paint.setColor(Color.parseColor("#434343"));
-            canvas.drawPaint(paint);
-            paint.setColor(Color.parseColor("#ffff00"));
-
-            canvas.drawColor(Color.parseColor("#343434"));
-            if (color1 == 0) paint.setColor(Color.parseColor("#ffff00"));
-            if (color1 == 1) paint.setColor(Color.parseColor("#0000ff"));
-            if (color1 == 2) paint.setColor(Color.parseColor("#ff0000"));
-
-        x1/=2;
-        y1/=2;
-        radiusX=radiusA-radiusB;
-        radiusY=radiusC;
-
-            for(int i=0;i<5000*steps;i++){
-
-                canvas.drawCircle(
-                        ((int)(x1+radiusX*Math.cos(i*0.0002*2*Math.PI)+radiusY*Math.cos(-i*0.0002*radiusA/radiusB*2*Math.PI-(0.0002*i*radiusA/radiusB)))),
-                        ((int)(y1+radiusX*Math.sin(i*0.0002*2*Math.PI)+radiusY*Math.sin(-i*0.0002*radiusA/radiusB*2*Math.PI-(0.0002*i*radiusA/radiusB)))),
-                        thicknss, paint);
-
-            }
-            paint.setTextSize(40);
-        canvas.drawText(radiusA+"//"+radiusB+"//"+radiusC+"//"+steps, 25, 40, paint);
-
-        }
-
-
-
-    }
+    ///back to the reality
 
     public void onClickReset(View view){
         radiusA=530;
