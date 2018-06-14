@@ -14,22 +14,24 @@ import android.graphics.Paint;
 
 
 
-
 public class MainActivity extends AppCompatActivity {
 
-    public double radiusA=530;
-    public double radiusB=320;
-    public double radiusC=200;
-    public int thicknss = 5;
-    public int color=0; // 0- yellow, 1 - blue, 2- red
-    public double steps=7;
+
+    int n=0;
+/////////////////////////////rA[0],rB[1],rC[2],thcknss[3],clr[4],steps[5]
+    public double[][] data ={{530,320,200,5,0,7},
+                             {500,340,200,5,1,0},
+                             {530,320,200,5,2,0}};
+
+
 
     private void printValues(View view){
-        ((TextView)findViewById(R.id.eTextA)).setText(Double.toString(radiusA/10));
-        ((TextView)findViewById(R.id.eTextB)).setText(Double.toString(radiusB/10));
-        ((TextView)findViewById(R.id.eTextC)).setText(Double.toString(radiusC/10));
-        ((TextView)findViewById(R.id.eTextD)).setText(Integer.toString(thicknss));
-        ((TextView)findViewById(R.id.eTextE)).setText(Double.toString(steps));
+        ((TextView)findViewById(R.id.eTextA)).setText(Double.toString(data[n][0]/10));
+        ((TextView)findViewById(R.id.eTextB)).setText(Double.toString(data[n][1]/10));
+        ((TextView)findViewById(R.id.eTextC)).setText(Double.toString(data[n][2]/10));
+        ((TextView)findViewById(R.id.eTextD)).setText(Double.toString(data[n][3]));
+        ((TextView)findViewById(R.id.eTextE)).setText(Double.toString(data[n][5]));
+
     }
 
 
@@ -37,9 +39,8 @@ public class MainActivity extends AppCompatActivity {
 //    View Control Section
 
     public void onClickSwitchViewRysuj(View view) {
-//        MyView mysz = new MyView(this, radiusA, radiusB, radiusC, thicknss, color, steps);
-        setContentView(new MyView(this, radiusA, radiusB, radiusC, thicknss, color, steps));
-//        mysz.zmienne();
+        setContentView(R.layout.drawing_in_progress);
+    setContentView(new MyView(this, data));
     }
 
     public void onClickSwitchViewMain(View view) {
@@ -61,117 +62,144 @@ public class MainActivity extends AppCompatActivity {
 // Radius Control Section
 
     public void onClickPlusCRadiusA(View view){
-        radiusA+=10;
+        data[n][0]+=10;
         printValues(view);
     }
 
     public void onClickPlusDRadiusA(View view){
-        radiusA++;
+        data[n][0]++;
         printValues(view);
     }
 
     public void onClickMinusCRadiusA(View view){
-        if(radiusA>10) radiusA-=10;
-        if(radiusB>radiusA) radiusB=radiusA;
-        if(radiusC>radiusA) radiusC=radiusA;
+        if(data[n][0]>10) data[n][0]-=10;
+        if(data[n][1]>data[n][0]) data[n][1]=data[n][0];
+        if(data[n][2]>data[n][0]) data[n][2]=data[n][0];
         printValues(view);
     }
 
     public void onClickMinusDRadiusA(View view){
-        if(radiusA>1) radiusA--;
-        if(radiusB>radiusA) radiusB=radiusA;
-        if(radiusC>radiusA) radiusC=radiusA;
+        if(data[n][0]>1) data[n][0]--;
+        if(data[n][1]>data[n][0]) data[n][1]=data[n][0];
+        if(data[n][2]>data[n][0]) data[n][2]=data[n][0];
         printValues(view);
     }
 
 //
 
     public void onClickPlusCRadiusB(View view){
-        if(radiusB<radiusA-10) radiusB+=10;
+        if(data[n][1]<data[n][0]-10) data[n][1]+=10;
         printValues(view);
     }
 
     public void onClickPlusDRadiusB(View view){
-        if(radiusB<radiusA)radiusB++;
+        if(data[n][1]<data[n][0])data[n][1]++;
         printValues(view);
     }
 
     public void onClickMinusCRadiusB(View view){
-       if(radiusB>10) radiusB-=10;
-        if(radiusC>radiusB) radiusC=radiusB;
+       if(data[n][1]>10) data[n][1]-=10;
+        if(data[n][2]>data[n][1]) data[n][2]=data[n][1];
         printValues(view);
     }
 
     public void onClickMinusDRadiusB(View view){
-        if(radiusB>1) radiusB--;
-        if(radiusC>radiusB) radiusC=radiusB;
+        if(data[n][1]>1) data[n][1]--;
+        if(data[n][2]>data[n][1]) data[n][2]=data[n][1];
         printValues(view);
     }
 
 //
 
     public void onClickPlusCRadiusC(View view) {
-        if(radiusC<radiusB-10) radiusC+=10;
+        if(data[n][2]<data[n][1]-10) data[n][2]+=10;
         printValues(view);
     }
 
     public void onClickPlusDRadiusC(View view){
-        if(radiusC<radiusB)radiusC++;
+        if(data[n][2]<data[n][1])data[n][2]++;
         printValues(view);
     }
 
     public void onClickMinusCRadiusC(View view){
-        if(radiusC>10) radiusC-=10;
+        if(data[n][2]>10) data[n][2]-=10;
         printValues(view);
     }
 
     public void onClickMinusDRadiusC(View view){
-        if(radiusC>1) radiusC--;
+        if(data[n][2]>1) data[n][2]--;
         printValues(view);
     }
 
 
     public void onClickPlusPen(View view){
-        thicknss++;
+        data[n][3]++;
 
-        ((TextView)findViewById(R.id.eTextD)).setText(Integer.toString(thicknss));
+        ((TextView)findViewById(R.id.eTextD)).setText(Double.toString(data[n][3]));
 
     }
 
     public void onClickMinusPen(View view){
-        if(thicknss>1) thicknss--;
+        if(data[n][3]>1) data[n][3]--;
 
-        ((TextView)findViewById(R.id.eTextD)).setText(Integer.toString(thicknss));
+        ((TextView)findViewById(R.id.eTextD)).setText(Double.toString(data[n][3]));
 
     }
 //
+    public void switchLayer1(View view){
+        n=0;
+        printValues(view);
+    }
+
+
+    public void switchLayer2(View view){
+        n=1;
+        printValues(view);
+    }
+
+    public void switchLayer3(View view){
+        n=2;
+        printValues(view);
+    }
+
+
 
 //    KOLORY
     public void onClickSwitchColorBlue(View view){
-        color=1;
+//        color=1;
+        data[n][4]=1;
         onClickSwitchViewMain(view);
     }
 
     public void onClickSwitchColorYellow(View view){
-        color=0;
+//        color=0;
+        data[n][4]=0;
         onClickSwitchViewMain(view);
     }
 
+    public void onClickSwitchColorGreen(View view){
+//        color=3;
+        data[n][4]=3;
+        onClickSwitchViewMain(view);
+    }
+
+
     public void onClickSwitchColorRed(View view){
-        color=2;
+//        color=2;
+        data[n][4]=2;
         onClickSwitchViewMain(view);
     }
 
 //
 
     public void onClickPlusStep(View view){
-        steps+=0.5;
-        ((TextView)findViewById(R.id.eTextE)).setText(Double.toString(steps));
+        data[n][5]+=0.5;
+        ((TextView)findViewById(R.id.eTextE)).setText(Double.toString(data[n][5]));
     }
 
     public void onClickMinusStep(View view){
-        if(steps>0.5) steps-=0.5;
-        ((TextView)findViewById(R.id.eTextE)).setText(Double.toString(steps));
+        if(data[n][5]>0.5) data[n][5]-=0.5;
+        ((TextView)findViewById(R.id.eTextE)).setText(Double.toString(data[n][5]));
     }
 
     //view-draw-etc
@@ -231,12 +259,35 @@ public class MainActivity extends AppCompatActivity {
     ///back to the reality
 
     public void onClickReset(View view){
-        radiusA=530;
-        radiusB=320;
-        radiusC=200;
-        steps=7;
-        color=0;
-        thicknss = 5;
+//        radiusA=530;
+//        radiusB=320;
+//        radiusC=200;
+//        steps=7;
+//        color=0;
+//        thicknss = 5;
+
+        data[0][0]=530; //radiusA
+        data[0][1]=320; //radiusB
+        data[0][2]=200; //radiusC
+        data[0][3]=5;   //thicknss
+        data[0][4]=0;   //color
+        data[0][5]=7;   //steps
+
+        data[1][0]=500;
+        data[1][1]=340;
+        data[1][2]=200;
+        data[1][3]=5;
+        data[1][4]=1;
+        data[1][5]=0;
+
+        data[2][0]=530;
+        data[2][1]=320;
+        data[2][2]=200;
+        data[2][3]=5;
+        data[2][4]=2;
+        data[2][5]=0;
+
+        n=0;
         printValues(view);
     }
 
