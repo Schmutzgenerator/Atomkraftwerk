@@ -1,23 +1,28 @@
 package atom.kraftwerk;
+// by Wojciech S.Y.R.O.P. Godula
+// enjoy good techno while reading the code
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.design.widget.BaseTransientBottomBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 //
-import android.content.Context;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
-
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
+//    View view = new View(this);
 
+//    Bitmap bitmap = Bitmap.createBitmap( view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
 
     int n=0;
+    int layout=0;
 /////////////////////////////rA[0],rB[1],rC[2],thcknss[3],clr[4],steps[5]
     public double[][] data ={{530,320,200,5,0,7},
                              {500,340,200,5,1,0},
@@ -25,13 +30,20 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void printValues(View view){
-        ((TextView)findViewById(R.id.eTextA)).setText(Double.toString(data[n][0]/10));
-        ((TextView)findViewById(R.id.eTextB)).setText(Double.toString(data[n][1]/10));
-        ((TextView)findViewById(R.id.eTextC)).setText(Double.toString(data[n][2]/10));
-        ((TextView)findViewById(R.id.eTextD)).setText(Double.toString(data[n][3]));
-        ((TextView)findViewById(R.id.eTextE)).setText(Double.toString(data[n][5]));
+    private void printValues(View view) {
+        ((TextView) findViewById(R.id.eTextA)).setText(Double.toString(data[n][0] / 10));
+        ((TextView) findViewById(R.id.eTextB)).setText(Double.toString(data[n][1] / 10));
+        ((TextView) findViewById(R.id.eTextC)).setText(Double.toString(data[n][2] / 10));
+        ((TextView) findViewById(R.id.eTextD)).setText(Double.toString(data[n][3]));
+        ((TextView) findViewById(R.id.eTextE)).setText(Double.toString(data[n][5]));
 
+
+        if(data[n][4]==0) ((TextView) findViewById(R.id.textView3)).setTextColor(Color.parseColor("#ffff00"));
+        if(data[n][4]==1) ((TextView) findViewById(R.id.textView3)).setTextColor(Color.parseColor("#0000ff"));
+        if(data[n][4]==2) ((TextView) findViewById(R.id.textView3)).setTextColor(Color.parseColor("#ff0000"));
+        if(data[n][4]==3) ((TextView) findViewById(R.id.textView3)).setTextColor(Color.parseColor("#00ff00"));
+
+        ((TextView)findViewById(R.id.textView3)).setText(Integer.toString(n+1));
     }
 
 
@@ -39,23 +51,34 @@ public class MainActivity extends AppCompatActivity {
 //    View Control Section
 
     public void onClickSwitchViewRysuj(View view) {
-        setContentView(R.layout.drawing_in_progress);
-    setContentView(new MyView(this, data));
+//        setContentView(R.layout.drawing_in_progress);
+//        Toast.makeText(getApplicationContext(),"drawing in progress", Toast.LENGTH_LONG);
+
+        if(layout == 0)  {   MyView mv = new MyView(this, data);
+//        ((ImageView) findViewById(R.id.imageView2)).setVisibility((View.VISIBLE));
+        setContentView(mv);
+        layout=1;
+    }
+//    setContentView(new MyView(this, data));
+
     }
 
     public void onClickSwitchViewMain(View view) {
         setContentView(R.layout.activity_main);
         printValues(view);
+        layout=0;
     }
 
     public void onClickSwitchViewZapisane(View view) {
 
         setContentView(R.layout.activity_zapisane);
+        layout=0;
     }
 
     public void onClickSwitchViewKolory(View view){
 
         setContentView(R.layout.activity_kolory);
+        layout=0;
     }
 
 
@@ -169,18 +192,21 @@ public class MainActivity extends AppCompatActivity {
 //        color=1;
         data[n][4]=1;
         onClickSwitchViewMain(view);
+        printValues(view);
     }
 
     public void onClickSwitchColorYellow(View view){
 //        color=0;
         data[n][4]=0;
         onClickSwitchViewMain(view);
+        printValues(view);
     }
 
     public void onClickSwitchColorGreen(View view){
 //        color=3;
         data[n][4]=3;
         onClickSwitchViewMain(view);
+        printValues(view);
     }
 
 
@@ -188,6 +214,7 @@ public class MainActivity extends AppCompatActivity {
 //        color=2;
         data[n][4]=2;
         onClickSwitchViewMain(view);
+        printValues(view);
     }
 
 //
@@ -289,6 +316,8 @@ public class MainActivity extends AppCompatActivity {
 
         n=0;
         printValues(view);
+        ((ImageView) findViewById(R.id.imageView2)).setVisibility((View.INVISIBLE));
+        ((TextView)findViewById(R.id.textView3)).setText("1");
     }
 
     @Override

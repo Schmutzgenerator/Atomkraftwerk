@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Atomkraftwerk</string>
-    <string name="button_back"> DOM </string>
-    <string name="button_draw"> RYSUJ </string>
-    <string name="button_saved"> ZAPISANE </string>
+    <string name="button_back"> HOME </string>
+    <string name="button_draw"> DRAW </string>
+    <string name="button_saved"> SAVED </string>
     <string name="button_reset"> RESET </string>
-    <string name="button_kolory"> KOLORY </string>
+    <string name="button_kolory"> COLORS </string>
 </resources>
