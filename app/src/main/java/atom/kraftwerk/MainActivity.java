@@ -2,31 +2,29 @@ package atom.kraftwerk;
 // by Wojciech S.Y.R.O.P. Godula
 // enjoy good techno while reading the code
 
+
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.os.Bundle;
-import android.support.design.widget.BaseTransientBottomBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-//
 import android.graphics.Color;
 import android.widget.Toast;
-
+import android.os.AsyncTask;
 
 public class MainActivity extends AppCompatActivity {
-//    View view = new View(this);
-
-//    Bitmap bitmap = Bitmap.createBitmap( view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
 
     int n=0;
     int layout=0;
-/////////////////////////////rA[0],rB[1],rC[2],thcknss[3],clr[4],steps[5]
+    Canvas canvas;
     public double[][] data ={{530,320,200,5,0,7},
-                             {500,340,200,5,1,0},
-                             {530,320,200,5,2,0}};
+                            {500,340,200,5,1,0},
+                            {530,320,200,5,2,0}};
+/////////////////////////////rA[0],rB[1],rC[2],thcknss[3],clr[4],steps[5]
 
 
 
@@ -51,16 +49,22 @@ public class MainActivity extends AppCompatActivity {
 //    View Control Section
 
     public void onClickSwitchViewRysuj(View view) {
-//        setContentView(R.layout.drawing_in_progress);
-//        Toast.makeText(getApplicationContext(),"drawing in progress", Toast.LENGTH_LONG);
 
-        if(layout == 0)  {   MyView mv = new MyView(this, data);
-//        ((ImageView) findViewById(R.id.imageView2)).setVisibility((View.VISIBLE));
-        setContentView(mv);
-        layout=1;
-    }
-//    setContentView(new MyView(this, data));
+        MyView mV = new MyView(this,data);
+//        try {
+//            Toast.makeText(this,"processing",Toast.LENGTH_LONG).show() ;
+//            Thread.sleep(1000);
+            if (layout == 0) {
 
+//                Thread.sleep(1000);
+                setContentView(mV);
+//                mV.kkk(canvas);
+//                Thread.sleep(1000);
+                layout = 1;
+            }
+//        } catch(InterruptedException e){
+//            e.printStackTrace();
+//        }
     }
 
     public void onClickSwitchViewMain(View view) {
