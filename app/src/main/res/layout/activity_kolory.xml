@@ -15,6 +15,22 @@
     <!---->
 
     <Button
+        android:id="@+id/buttonHospital"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:background="#00ffa5"
+        android:onClick="onClickSwitchColor7"
+        android:text=" "
+        app:layout_constraintEnd_toStartOf="@+id/buttonGreen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRed" />
+
+    <Button
         android:id="@+id/buttonRed"
         android:layout_width="64dp"
         android:layout_height="64dp"
@@ -22,16 +38,17 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:text=" "
+        android:layout_marginTop="44dp"
         android:background="@color/colorRed"
-        android:onClick="onClickSwitchColorRed"
+        android:onClick="onClickSwitchColor1"
+        android:text=" "
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonBlue"
+        android:id="@+id/buttonMagenta"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginEnd="8dp"
@@ -39,12 +56,12 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        android:background="@color/colorBlue"
+        android:background="#ff00ff"
+        android:onClick="onClickSwitchColor4"
         android:text=" "
-        android:onClick="onClickSwitchColorBlue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRed" />
+        app:layout_constraintStart_toEndOf="@+id/buttonBlue"
+        app:layout_constraintTop_toBottomOf="@+id/buttonGreen" />
 
     <Button
         android:id="@+id/buttonYellow"
@@ -54,13 +71,64 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:onClick="onClickSwitchColorYellow"
-        android:background="@color/colorAccent"
+        android:layout_marginTop="44dp"
+        android:background="#ffff00"
+        android:onClick="onClickSwitchColor0"
         android:text=" "
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toEndOf="@+id/buttonRed"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonBlue"
+        android:layout_width="66dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/colorBlue"
+        android:onClick="onClickSwitchColor3"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonBlue" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonGreen" />
+
+    <Button
+        android:id="@+id/buttonTurquise"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:background="#00ffff"
+        android:onClick="onClickSwitchColor5"
+        android:text=" "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonBlue"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRed" />
+
+    <Button
+        android:id="@+id/buttonViolet"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:background="#8000ff"
+        android:onClick="onClickSwitchColor6"
+        android:text=" "
+        app:layout_constraintEnd_toStartOf="@+id/buttonBlue"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonGreen" />
 
     <Button
         android:id="@+id/buttonGreen"
@@ -71,12 +139,28 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        android:onClick="onClickSwitchColorGreen"
         android:background="#00ff00"
+        android:onClick="onClickSwitchColor2"
         android:text=" "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonYellow" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonRed" />
+
+    <Button
+        android:id="@+id/buttonOrange"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:background="#ffA500"
+        android:onClick="onClickSwitchColor8"
+        android:text=" "
+        app:layout_constraintEnd_toStartOf="@+id/buttonRed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
