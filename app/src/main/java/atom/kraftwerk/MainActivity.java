@@ -3,24 +3,35 @@ package atom.kraftwerk;
 // enjoy good techno while reading the code
 
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.TextView;
 import android.graphics.Color;
 import android.widget.Toast;
-import android.os.AsyncTask;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+    Random wizz = new Random();
 
+//    0 yellow      #ffff00
+//    1 red         #ff0000
+//    2 green       #00ff00
+//    3 blue        #0000ff
+//    4 magenta     #ff00ff
+//    5 turquise    #00ffff
+//    6 violet      #8000ff
+//    7 hoispital   #00ffa5
+//    8 orange      #ffa500
+
+    public String[] colors={"#ffff00","#ff0000","#00ff00","#0000ff","#ff00ff","#00ffff","#8000ff","#00ffa5","#ffa500"};
     int n=0;
     int layout=0;
-    Canvas canvas;
     public double[][] data ={{530,320,200,5,0,7},
                             {500,340,200,5,1,0},
                             {530,320,200,5,2,0}};
@@ -36,11 +47,7 @@ public class MainActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.eTextE)).setText(Double.toString(data[n][5]));
 
 
-        if(data[n][4]==0) ((TextView) findViewById(R.id.textView3)).setTextColor(Color.parseColor("#ffff00"));
-        if(data[n][4]==1) ((TextView) findViewById(R.id.textView3)).setTextColor(Color.parseColor("#0000ff"));
-        if(data[n][4]==2) ((TextView) findViewById(R.id.textView3)).setTextColor(Color.parseColor("#ff0000"));
-        if(data[n][4]==3) ((TextView) findViewById(R.id.textView3)).setTextColor(Color.parseColor("#00ff00"));
-
+ ((TextView) findViewById(R.id.textView3)).setTextColor(Color.parseColor(colors[(int)(data[n][4])]));
         ((TextView)findViewById(R.id.textView3)).setText(Integer.toString(n+1));
     }
 
@@ -49,22 +56,13 @@ public class MainActivity extends AppCompatActivity {
 //    View Control Section
 
     public void onClickSwitchViewRysuj(View view) {
-
-        MyView mV = new MyView(this,data);
-//        try {
-//            Toast.makeText(this,"processing",Toast.LENGTH_LONG).show() ;
-//            Thread.sleep(1000);
+        ((Button)findViewById(R.id.buttonBack)).setBackgroundColor(Color.parseColor("#999900"));
             if (layout == 0) {
-
-//                Thread.sleep(1000);
-                setContentView(mV);
-//                mV.kkk(canvas);
-//                Thread.sleep(1000);
+                setContentView(new MyView(this, data));
                 layout = 1;
             }
-//        } catch(InterruptedException e){
-//            e.printStackTrace();
-//        }
+        ((Button)findViewById(R.id.buttonSaved)).setBackgroundColor(Color.parseColor("#ffff00"));
+        ((Button)findViewById(R.id.buttonBack)).setBackgroundColor(Color.parseColor("#ffff00"));
     }
 
     public void onClickSwitchViewMain(View view) {
@@ -192,34 +190,55 @@ public class MainActivity extends AppCompatActivity {
 
 
 //    KOLORY
-    public void onClickSwitchColorBlue(View view){
-//        color=1;
-        data[n][4]=1;
-        onClickSwitchViewMain(view);
-        printValues(view);
-    }
 
-    public void onClickSwitchColorYellow(View view){
-//        color=0;
+    public void onClickSwitchColor0(View view){
         data[n][4]=0;
         onClickSwitchViewMain(view);
         printValues(view);
     }
-
-    public void onClickSwitchColorGreen(View view){
-//        color=3;
-        data[n][4]=3;
+    public void onClickSwitchColor1(View view){
+        data[n][4]=1;
         onClickSwitchViewMain(view);
         printValues(view);
     }
-
-
-    public void onClickSwitchColorRed(View view){
-//        color=2;
+    public void onClickSwitchColor2(View view){
         data[n][4]=2;
         onClickSwitchViewMain(view);
         printValues(view);
     }
+    public void onClickSwitchColor3(View view){ //blue
+        data[n][4]=3;
+        onClickSwitchViewMain(view);
+        printValues(view);
+    }
+    public void onClickSwitchColor4(View view){
+        data[n][4]=4;
+        onClickSwitchViewMain(view);
+        printValues(view);
+    }
+    public void onClickSwitchColor5(View view){
+        data[n][4]=5;
+        onClickSwitchViewMain(view);
+        printValues(view);
+    }
+    public void onClickSwitchColor6(View view){
+        data[n][4]=6;
+        onClickSwitchViewMain(view);
+        printValues(view);
+    }
+    public void onClickSwitchColor7(View view){
+        data[n][4]=7;
+        onClickSwitchViewMain(view);
+        printValues(view);
+    }
+    public void onClickSwitchColor8(View view){
+        data[n][4]=8;
+        onClickSwitchViewMain(view);
+        printValues(view);
+    }
+
+
+
 
 //
 
@@ -289,6 +308,43 @@ public class MainActivity extends AppCompatActivity {
 
     ///back to the reality
 
+
+
+    public void onClickRandom(View view){
+
+        ((Button)findViewById(R.id.buttonSaved)).setBackgroundColor(Color.parseColor("#999900"));
+        layout=0;
+        Toast.makeText(this,"drawing", Toast.LENGTH_LONG);
+        for(int j=0;j<3;j++) {
+            data[j][0] =  220 + wizz.nextInt(450);
+
+            do {
+            data[j][1]=100+wizz.nextInt(600);
+            } while (data[j][1] > data[j][0]);
+
+            do {
+                data[j][2]=20+wizz.nextInt(600);
+            } while (data[j][2] > data[j][1]);
+
+            data[j][3]=wizz.nextInt(10);
+            data[j][4]=(wizz.nextInt(90))%9;
+
+            data[j][5]=(wizz.nextInt(100)-40)/2;
+            if(data[j][5]<0) data[j][5]=0;
+            onClickSwitchViewRysuj(view);
+        }
+        //
+
+
+
+
+    }
+
+
+
+
+
+
     public void onClickReset(View view){
 //        radiusA=530;
 //        radiusB=320;
@@ -320,7 +376,6 @@ public class MainActivity extends AppCompatActivity {
 
         n=0;
         printValues(view);
-        ((ImageView) findViewById(R.id.imageView2)).setVisibility((View.INVISIBLE));
         ((TextView)findViewById(R.id.textView3)).setText("1");
     }
 
